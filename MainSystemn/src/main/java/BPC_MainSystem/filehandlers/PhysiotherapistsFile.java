@@ -1,7 +1,9 @@
 package BPC_MainSystem.filehandlers;
+
+import BPC_MainSystem.models.Physiotherapists;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import BPC_MainSystem.models.Physiotherapists;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
