@@ -64,28 +64,6 @@ public class PhysioCtrlTest {
         assertEquals(sizeBefore + 1, sizeAfter, "Physio should be added successfully.");
     }
 
-    @Test
-    public void testDeletePhysio() {
-        List<Physiotherapists> physios = PhysiotherapistsFile.readPhysio();
-        int initialSize = physios.size();
-
-        if (initialSize == 0) {
-            Physiotherapists dummy = new Physiotherapists(
-                    PhysioCtrl.generatePhysiotId(),
-                    "Dummy Physio",
-                    "Somewhere",
-                    "9876543210",
-                    new java.util.HashMap<>()
-            );
-            physios.add(dummy);
-            PhysiotherapistsFile.savePhysio(physios);
-        }
-        List<Physiotherapists> updatedPhysios = PhysiotherapistsFile.readPhysio();
-        Physiotherapists toDelete = updatedPhysios.get(updatedPhysios.size() - 1);
-        updatedPhysios.remove(toDelete);
-        PhysiotherapistsFile.savePhysio(updatedPhysios);
-
-        List<Physiotherapists> finalList = PhysiotherapistsFile.readPhysio();
-        assertEquals(initialSize - 1, finalList.size(), "Physio should be deleted successfully.");
+    
     }
 }

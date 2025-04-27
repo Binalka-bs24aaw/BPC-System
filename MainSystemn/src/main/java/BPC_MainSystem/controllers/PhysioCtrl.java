@@ -208,7 +208,7 @@ public class PhysioCtrl {
         }
     }
 
-    private static int generatePhysiotId() {
+    public static int generatePhysiotId() {
         List<Physiotherapists> physios = PhysiotherapistsFile.readPhysio();
         int maxId = 0;
         for (Physiotherapists physio : physios) {

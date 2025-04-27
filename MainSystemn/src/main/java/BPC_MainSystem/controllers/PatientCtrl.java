@@ -150,7 +150,7 @@ public class PatientCtrl {
         }
     }
 
-    private static int generatePatientId() {
+    public static int generatePatientId() {
         ArrayList<Patient> patients = PatientFile.readPatientstxt();
         int maxId = 0;
         for (Patient patient : patients) {
