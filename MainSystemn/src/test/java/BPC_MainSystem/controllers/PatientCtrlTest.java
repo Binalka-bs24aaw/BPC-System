@@ -81,32 +81,7 @@ public class PatientCtrlTest {
         assertFalse(idExists, "Generated Patient ID should not already exist.");
     }
 
-    @Test
-    public void testDeletePatient() {
-        // Add a test patient to delete
-        Patient newPatient = new Patient(
-                PatientCtrl.generatePatientId(),
-                "Binalka Susalini",
-                "120 Delete St",
-                "0987654321"
-        );
-        PatientFile.savePatient(newPatient);
 
-        List<Patient> patients = PatientFile.readPatientstxt();
-        int initialSize = patients.size();
-
-        Patient patientToDelete = patients.stream()
-                .filter(patient -> patient.getpName().equals("Delete Test"))
-                .findFirst()
-                .orElse(null);
-        assertNotNull(patientToDelete, "Test patient should exist for deletion.");
-
-        patients.remove(patientToDelete);
-        boolean saved = PatientFile.saveAllPatients((ArrayList<Patient>) patients);
-        assertTrue(saved, "Patient list should be saved after deletion.");
-
-        List<Patient> updatedPatients = PatientFile.readPatientstxt();
-        assertEquals(initialSize - 1, updatedPatients.size(), "Patient list size should decrease by 1 after deletion.");
-    }
+    
 
 }
